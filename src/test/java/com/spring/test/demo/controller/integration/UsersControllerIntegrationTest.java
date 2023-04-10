@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
@@ -23,10 +22,9 @@ import org.springframework.test.context.TestPropertySource;
 
 import com.spring.test.demo.dto.UserDto;
 import com.spring.test.demo.dto.UserRegisterDto;
-import com.spring.test.demo.model.User;
 import com.spring.test.demo.response.SuccessResponse;
 
-@SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @TestPropertySource(locations = "/application-test.properties")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class UsersControllerIntegrationTest {

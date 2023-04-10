@@ -25,6 +25,7 @@ public class UserServiceIntegrationTest {
 	@Mock
 	UserRepository userRepository;
 	
+	//we don't need to mock the behavior of mappers, we need the use the real object 
 	@Spy
 	private UserRegisterMapper userRegisterMapper = Mappers.getMapper(UserRegisterMapper.class);
 	
