@@ -8,6 +8,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.mock.mockito.SpyBean;
 
 import com.spring.test.demo.dto.UserDto;
 import com.spring.test.demo.dto.UserRegisterDto;
@@ -17,7 +18,7 @@ import com.spring.test.demo.model.User;
 import com.spring.test.demo.repository.UserRepository;
 
 @ExtendWith(MockitoExtension.class)
-public class UserServiceIntegrationTest {
+public class UserServiceUnitTest {
 
 	@InjectMocks
 	UserService userService;
@@ -26,8 +27,8 @@ public class UserServiceIntegrationTest {
 	UserRepository userRepository;
 	
 	//we don't need to mock the behavior of mappers, we need the use the real object 
-	@Spy
-	private UserRegisterMapper userRegisterMapper = Mappers.getMapper(UserRegisterMapper.class);
+	@SpyBean
+	private UserRegisterMapper userRegisterMapper;// = Mappers.getMapper(UserRegisterMapper.class);
 	
 	@Spy
 	private UserDtoMapper userDtoMapper = Mappers.getMapper(UserDtoMapper.class);
