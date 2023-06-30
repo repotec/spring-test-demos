@@ -27,8 +27,9 @@ public class UserServiceUnitTest {
 	UserRepository userRepository;
 	
 	//we don't need to mock the behavior of mappers, we need the use the real object 
-	@SpyBean
-	private UserRegisterMapper userRegisterMapper;// = Mappers.getMapper(UserRegisterMapper.class);
+	//@SpyBean
+	@Spy
+	private UserRegisterMapper userRegisterMapper = Mappers.getMapper(UserRegisterMapper.class);
 	
 	@Spy
 	private UserDtoMapper userDtoMapper = Mappers.getMapper(UserDtoMapper.class);

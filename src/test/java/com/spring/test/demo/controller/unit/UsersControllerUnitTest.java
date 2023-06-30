@@ -18,6 +18,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -70,7 +71,7 @@ public class UsersControllerUnitTest {
 		//when
 		Mockito.when(userService.createUser(Mockito.any(UserRegisterDto.class))).thenReturn(userDto);
 		
-		MvcResult result = mockMvc.perform(requestBuilder).andReturn();
+		MvcResult result = mockMvc.perform(requestBuilder).andDo(MockMvcResultHandlers.print()).andReturn();
 		String responseAsString = result.getResponse().getContentAsString();
 		SuccessResponse<UserDto> response = new ObjectMapper().readValue(responseAsString, new TypeReference<SuccessResponse<UserDto>>() {});
 		UserDto createdUser = response.getData();
