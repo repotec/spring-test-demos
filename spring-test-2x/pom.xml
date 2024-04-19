@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.0</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.spring.test.2x</groupId>
+    <artifactId>spring-test-2x</artifactId>
+    <packaging>pom</packaging>
+    <name>spring-test-2.x</name>
+
+    <properties>
+        <java.version>11</java.version>
+        <lombok.version>1.18.22</lombok.version>
+        <mapstruct.version>1.5.2.Final</mapstruct.version>
+        <mapstruct-lombok.version>0.2.0</mapstruct-lombok.version>
+        <maven.compiler.plugin.version>3.10.1</maven.compiler.plugin.version>
+    </properties>
+
+    <modules>
+        <module>spring-security-test</module>
+        <module>spring-container-mysql-test</module>
+        <module>web-mvc-test</module>
+    </modules>
+</project>

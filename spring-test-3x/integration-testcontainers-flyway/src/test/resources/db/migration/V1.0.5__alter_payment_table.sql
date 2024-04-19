@@ -1,0 +1,1 @@
+alter table if exists payment add constraint FK_payment_order_order_id foreign key (order_id) references orders
